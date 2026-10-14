@@ -1,18 +1,17 @@
-# Discord Clip Bot 🎙️
+# Discord Clip Bot
 
-Bot Discord napisany w Node.js, który nagrywa dźwięk z kanału głosowego i pozwala tworzyć klipy z ostatnich sekund rozmowy.
+Bot Discord napisany w Node.js, który nagrywa dźwięk z kanału głosowego i umożliwia tworzenie klipów z ostatnich sekund rozmowy.
 
-## ✨ Funkcje
+## Funkcje
 
-- 🎙️ Dołączanie do kanału głosowego Discorda.
-- 🔴 Nagrywanie dźwięku uczestników rozmowy.
-- ✂️ Tworzenie klipów z ostatnich sekund nagrania.
-- ⏱️ Wybór długości klipu — od 5 do 300 sekund.
-- 📝 Nadawanie własnej nazwy plikom.
-- 📤 Automatyczne wysyłanie gotowych klipów na wybrany kanał tekstowy.
-- 🔊 Konwersja nagrań do formatu WAV.
+- Dołączanie do kanału głosowego.
+- Nagrywanie dźwięku.
+- Tworzenie klipów o długości od 5 do 300 sekund.
+- Ustawianie własnej nazwy pliku.
+- Automatyczne wysyłanie klipów na wybrany kanał tekstowy.
+- Konwersja nagrań do formatu WAV.
 
-## 🛠️ Technologie
+## Wykorzystane technologie
 
 - Node.js
 - discord.js
@@ -20,81 +19,60 @@ Bot Discord napisany w Node.js, który nagrywa dźwięk z kanału głosowego i p
 - prism-media
 - FFmpeg
 
-## 📋 Wymagania
+## Wymagania
 
-- Node.js w wersji obsługującej używane zależności.
-- Bot Discord utworzony w [Discord Developer Portal](https://discord.com/developers/applications).
+- Zainstalowany Node.js.
+- Bot utworzony w Discord Developer Portal.
 - Token bota Discord.
-- Dostęp do serwera Discord oraz odpowiednie uprawnienia.
+- Dostęp do serwera Discord.
 
-## ⚙️ Instalacja
+## Instalacja
 
 1. Sklonuj repozytorium:
 
-   ```bash
    git clone https://github.com/JakGaw/TydzienKlipy.git
-   ```
 
 2. Przejdź do folderu projektu:
 
-   ```bash
    cd TydzienKlipy
-   ```
 
 3. Zainstaluj zależności:
 
-   ```bash
    npm install
-   ```
 
-4. Utwórz plik `.env` w głównym folderze projektu i uzupełnij wymagane zmienne środowiskowe.
+4. Utwórz plik .env w głównym folderze projektu i wpisz wymagane dane konfiguracyjne:
 
-   Przykładowy format:
-
-   ```env
    DISCORD_TOKEN=twoj_token_bota
-   CLIENT_ID=id_aplikacji_bota
-   GUILD_ID=id_serwera
-   CLIP_CHANNEL_ID=id_kanalu_na_klipy
-   ```
-
-   Wartości należy uzupełnić zgodnie z konfiguracją projektu.
+   CLIP_CHANNEL_ID=id_kanalu_tekstowego
 
 5. Zarejestruj komendy:
 
-   ```bash
    node deploy-commands.js
-   ```
 
 6. Uruchom bota:
 
-   ```bash
    node index.js
-   ```
 
-## 🎮 Używanie bota
+## Dostępne komendy
 
-### `/dolacz`
+### /dolacz
 
-Bot dołącza do kanału głosowego, w którym znajduje się użytkownik.
+Bot dołącza do kanału głosowego użytkownika.
 
-### `/klip`
+### /klip
 
 Tworzy klip z ostatnich sekund nagrania.
 
-Komenda przyjmuje dwa parametry:
+Parametry:
+- sekundy - długość klipu od 5 do 300 sekund.
+- nazwa - nazwa pliku z klipem.
 
-- `sekundy` — długość klipu, od 5 do 300 sekund.
-- `nazwa` — nazwa pliku wynikowego.
+Gotowy plik zostaje wysłany na skonfigurowany kanał tekstowy.
 
-Gotowy klip zostaje wysłany na skonfigurowany kanał tekstowy.
+## Bezpieczeństwo
 
-## 🔒 Bezpieczeństwo i prywatność
+Nie udostępniaj tokenu bota ani pliku .env. Przed nagrywaniem poinformuj uczestników rozmowy i zadbaj o wymagane zgody.
 
-- Nie udostępniaj tokenu bota ani zawartości pliku `.env`.
-- Przed nagrywaniem poinformuj uczestników rozmowy i uzyskaj wymagane zgody.
-- Dostęp do kanału z klipami powinien być ograniczony do uprawnionych osób.
+## Status projektu
 
-## 📌 Status projektu
-
-Projekt rozwijany. Możliwe są dalsze usprawnienia synchronizacji dźwięku i miksowania głosów wielu uczestników.
+Projekt rozwijany. W przyszłości możliwe są dalsze usprawnienia nagrywania i miksowania dźwięku.
